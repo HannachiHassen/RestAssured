@@ -105,7 +105,9 @@ public final class PostRequest {
 		byte[] bytes=Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/test.json"));
 		String reqBody=new String(bytes);
 		
-		String replace = reqBody.replace("15", String.valueOf(new Faker().number().numberBetween(100, 1000)));
+		String replace = reqBody.replace("15", String.valueOf(new Faker().number().numberBetween(100, 1000)))
+								.replace("fname",new Faker().name().firstName())
+								.replace("lname", new Faker().name().lastName());
 		
 		Response response=given()
 				.header("Content-Type",ContentType.JSON)
@@ -116,5 +118,15 @@ public final class PostRequest {
 		
 		response.prettyPrint();
 		System.out.println(response.getStatusCode());
+	}
+	
+	/**
+	 * Using map and list from java
+	 *  {} --> Map interface
+	 *  [] --> List
+	 */
+	@Test
+	public void postTest5(){
+		
 	}
 }
