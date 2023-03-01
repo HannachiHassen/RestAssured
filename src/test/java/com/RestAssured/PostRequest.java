@@ -6,7 +6,11 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.testng.annotations.Test;
@@ -128,16 +132,43 @@ public final class PostRequest {
 	 *  [] --> List
 	 *  
 	 *  seriallisers --> converts your language objects --> byte stream --> JSON
+	 *  verbose , not suitable for very big JSON file
+	 *  generic type needs to be mentioned 
 	 */
 	@Test
 	public void postTest5(){
 		
-		Map<String, Object> map= new HashMap<>();
+		Map<String, Object> map= new LinkedHashMap<>();
 		map.put("", 158 );
 		map.put("fname", "amuthan");
 		map.put("lname", "skitavel");
 		map.put("email", "abcd@gmail.com");
-
+	
+		/*
+		List<String> listJobs= new ArrayList<>();
+		listJobs.add("tester");
+		listJobs.add("trainer");
+		
+		map.put("jobs", listJobs);
+		*/
+		
+		map.put("jobs", Arrays.asList("tester","trainer"));
+		
+		Map<String, Object> food = new HashMap<>();
+		food.put("breakfast", "");
+		food.put("lunch", "");
+		
+		/*
+		List<String> dinnerFood= new ArrayList<>();
+		dinnerFood.add("chapathi");
+		dinnerFood.add("milk");
+		
+		food.put("dinner", dinnerFood);
+		*/
+		
+		food.put("dinner", Arrays.asList("chapathi","milk"));
+		map.put("favFood", food);
+		
 		Response response=given()
 				.header("Content-Type", ContentType.JSON)
 				.log()

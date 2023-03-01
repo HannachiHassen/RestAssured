@@ -1,6 +1,12 @@
 {
 	"id":15,
-	"first_name":"amuthan",
-	"last_name":"sakthival",
-	"email":"abcd@gmail.com"
+	"first_name":"fname",
+	"last_name":"lname",
+	"email":"abcd@gmail.com",	
+	"jobs":["tester","trainer"],
+	"favFoods":{
+		"breakfast":"idly",
+		"lunch":"rice",
+		"dinner":["chapathi","milk"]
+	}
 }
