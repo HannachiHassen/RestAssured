@@ -13,6 +13,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -139,10 +141,12 @@ public final class PostRequest {
 	public void postTest5(){
 		
 		Map<String, Object> map= new LinkedHashMap<>();
-		map.put("", 158 );
+		map.put("id", new Faker().number().numberBetween(100, 1000) );
 		map.put("fname", "amuthan");
 		map.put("lname", "skitavel");
 		map.put("email", "abcd@gmail.com");
+		map.put("email", "abcdf@gmail.com");  // "":["abcd@gmail.com","abcdf@gmail.com"]
+		
 	
 		/*
 		List<String> listJobs= new ArrayList<>();
@@ -155,8 +159,8 @@ public final class PostRequest {
 		map.put("jobs", Arrays.asList("tester","trainer"));
 		
 		Map<String, Object> food = new HashMap<>();
-		food.put("breakfast", "");
-		food.put("lunch", "");
+		food.put("breakfast", "idly");
+		food.put("lunch", "rice");
 		
 		/*
 		List<String> dinnerFood= new ArrayList<>();
@@ -178,5 +182,52 @@ public final class PostRequest {
 
 		response.prettyPrint();
 		System.out.println(response.getStatusCode());
+	}
+	
+	@Test
+	public void postTest6() {
+		/**
+		 * Using exteranl JSON library
+		 * Having some collection that can slove the problems we had with using Map and list
+		 * { } --> JsonObject
+		 * [] --> JsonArray
+		 */
+		JSONObject obj=new JSONObject();
+		obj.put("id", new Faker().number().numberBetween(100, 1000) );
+		obj.put("fname", "amuthan");
+		obj.put("lname", "skitavel");
+		obj.put("email", "abcd@gmail.com");
+		obj.accumulate("email", "abcdf@gmail.com");
+		obj.append("email", "query@gmail.com");
+		obj.putOpt("email1", null);   //if the value is not null, then only I want to add it 
+		// obj.putOnce("fname", "sdfc"); //duplicate 
+		
+		JSONArray listofJobs=new JSONArray();
+		listofJobs.put("tester");
+		listofJobs.put("tester");
+		
+		obj.put("jobs", listofJobs);
+		
+		JSONObject food = new JSONObject();
+		food.put("breakfast", "idly");
+		food.put("lunch", "rice");
+		
+		JSONArray listofFood=new JSONArray();
+		listofFood.put("chapathi");
+		listofFood.put("milk");
+		food.put("dinner", listofFood);
+		
+		obj.put("favFood", food);
+		
+		Response response=given()
+				.header("Content-Type", ContentType.JSON)
+				.log()
+				.all()
+				.body(obj.toMap()) // jackson helps to serialise
+				.post("http://localhost:3000/emmployees");
+
+		response.prettyPrint();
+		System.out.println(response.getStatusCode());
+		
 	}
 }
