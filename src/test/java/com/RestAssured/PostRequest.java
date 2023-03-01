@@ -126,6 +126,8 @@ public final class PostRequest {
 	 * Using map and list from java
 	 *  { } --> Map interface
 	 *  [] --> List
+	 *  
+	 *  seriallisers --> converts your language objects --> byte stream --> JSON
 	 */
 	@Test
 	public void postTest5(){
