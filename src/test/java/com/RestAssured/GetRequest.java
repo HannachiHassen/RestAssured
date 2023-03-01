@@ -11,7 +11,10 @@ import io.restassured.response.*;
 	
 	private GetRequest() {	}
 	
-	//RestAssured support BDD way and non BDD way
+	/**
+	 * RestAssured support BDD way and non BDD way
+	 */
+	
 	@Test
 	public void getTest() {
 		//sugarcoated methods -->readability
