@@ -2,6 +2,8 @@ package com.RestAssured;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.File;
+
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
@@ -11,7 +13,9 @@ public final class PostRequest {
 
 	public PostRequest() {	}
 	
-	// 1. Passing json body as String --> Not recommended	
+	// 1. Passing JSON body as String --> Not recommended	
+	// Easy to copy and past --> can be used to quickly check the behavior
+	// Not recommended for larger JSON or dynamic JSON
 	@Test
 	public void postTest() {
 		String rebBody="{\r\n"
@@ -32,9 +36,15 @@ public final class PostRequest {
 		System.out.println(response.getStatusCode());
 	}
 	
-	// 2. Passing json body as String --> Recommended
+	// 2. Passing from external file --> Recommended
+	// You cannot get the request form the file and print it on the console
+	@Test
 	public void postTest2() {
-		
+		Response response=given()
+				.header("Content-Type",ContentType.JSON)
+				.body(new File(System.getProperty("user.dir") + "/test.json"))
+				.post("http://localhost:3000/emmployees");
+		response.prettyPrint();
+		System.out.println(response.getStatusCode());
 	}
-	
 }
