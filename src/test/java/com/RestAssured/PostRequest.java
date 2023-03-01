@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.testng.annotations.Test;
 
@@ -122,11 +124,26 @@ public final class PostRequest {
 	
 	/**
 	 * Using map and list from java
-	 *  {} --> Map interface
+	 *  { } --> Map interface
 	 *  [] --> List
 	 */
 	@Test
 	public void postTest5(){
 		
+		Map<String, Object> map= new HashMap<>();
+		map.put("", 158 );
+		map.put("fname", "amuthan");
+		map.put("lname", "skitavel");
+		map.put("email", "abcd@gmail.com");
+
+		Response response=given()
+				.header("Content-Type", ContentType.JSON)
+				.log()
+				.all()
+				.body(map)
+				.post("http://localhost:3000/emmployees");
+
+		response.prettyPrint();
+		System.out.println(response.getStatusCode());
 	}
 }
