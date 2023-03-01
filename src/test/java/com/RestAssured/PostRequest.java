@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 
 import org.testng.annotations.Test;
 
+import com.github.javafaker.Faker;
+
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
@@ -71,6 +73,7 @@ public final class PostRequest {
 	 * Read request body from an external file and convert to string
 	   1. Logs the request body into the console
 	   2. Change few parameters in the request
+	   3. Not suitable for request having lot of dynamic parameters 
 	 * @throws IOException
 	 */
 		
@@ -79,11 +82,36 @@ public final class PostRequest {
 		byte[] bytes=Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/test.json"));
 		String reqBody=new String(bytes);
 		
+		String replace = reqBody.replace("15", "425");
+		
 		Response response=given()
 				.header("Content-Type",ContentType.JSON)
 				.log()
 				.all()
-				.body(reqBody)
+				.body(replace)
+				.post("http://localhost:3000/emmployees");
+		
+		response.prettyPrint();
+		System.out.println(response.getStatusCode());
+	}
+	
+	/**
+	 * Read request body from an external file and convert to string
+	 * Use JavaFaker dependency to generate data
+	 * @throws IOException
+	 */
+	@Test
+	public void postTest4() throws IOException {
+		byte[] bytes=Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/test.json"));
+		String reqBody=new String(bytes);
+		
+		String replace = reqBody.replace("15", String.valueOf(new Faker().number().numberBetween(100, 1000)));
+		
+		Response response=given()
+				.header("Content-Type",ContentType.JSON)
+				.log()
+				.all()
+				.body(replace)
 				.post("http://localhost:3000/emmployees");
 		
 		response.prettyPrint();
