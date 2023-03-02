@@ -5,6 +5,7 @@
     <classes>
       <class name="com.RestAssured.GetRequest"/>
       <class name="com.RestAssured.PostRequest"/>
+      <class name="com.RestAssured.PostRequestUsingPojo"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

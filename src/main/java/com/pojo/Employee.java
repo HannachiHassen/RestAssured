@@ -2,6 +2,11 @@ package com.pojo;
 
 import java.util.List;
 
+/**
+ * 
+ * @author HASSEN
+ *
+ */
 public final class Employee {	
 	
 	/**
