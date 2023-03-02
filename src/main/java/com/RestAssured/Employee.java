@@ -1,61 +1,74 @@
 package com.RestAssured;
 
-public final class Employee {
+import java.util.List;
 
-	public Employee(int id, String firstname, String lastname, String email, FavFood favfood) {	
-		this.id=id;
-		this.firstnatme=firstname;
-		this.lastname=lastname;
-		this.email=email;
-		this.favfood=favfood;
-	}
+public final class Employee {	
 
-	private static int id;
-	private static String firstnatme;
-	private static String lastname;
-	private static String email;
-	private FavFood favfood;
-	
-	public Employee setId(int id) {
+	/**
+	 * Constructor
+	 * @param id
+	 * @param firstnatme
+	 * @param lastname
+	 * @param email
+	 * @param jobs
+	 * @param favfood
+	 */
+	public Employee(int id, String firstnatme, String lastname, String email, List<String> jobs, FavFood favfood) {
 		this.id = id;
-		return this;
+		this.firstnatme = firstnatme;
+		this.lastname = lastname;
+		this.email = email;
+		this.jobs = jobs;
+		this.favfood = favfood;
 	}
+
+	private int id;
+	private String firstnatme;
+	private String lastname;
+	private String email;
+	private List<String> jobs;
+	private FavFood favfood;
 	
 	public int getId() {
 		return id;
 	}
-	
-	public static void setFirstnatme(String firstnatme) {
-		Employee.firstnatme = firstnatme;
+	public Employee setId(int id) {
+		this.id = id;
+		return this;
 	}
-	
 	public String getFirstnatme() {
 		return firstnatme;
-	}	
-
-	
-	public static void setLastname(String lastname) {
-		Employee.lastname = lastname;
 	}
-
+	public Employee setFirstnatme(String firstnatme) {
+		this.firstnatme = firstnatme;
+		return this;
+	}
 	public String getLastname() {
 		return lastname;
 	}
-	
-	
-	public static void setEmail(String email) {
-		Employee.email = email;
+	public Employee setLastname(String lastname) {
+		this.lastname = lastname;
+		return this;
 	}
-	
 	public String getEmail() {
 		return email;
-	}		
-	
+	}
+	public Employee setEmail(String email) {
+		this.email = email;
+		return this;
+	}
+	public List<String> getJobs() {
+		return jobs;
+	}
+	public Employee setJobs(List<String> jobs) {
+		this.jobs = jobs;
+		return this;
+	}
 	public FavFood getFavfood() {
 		return favfood;
 	}
-
-	public void setFavfood(FavFood favfood) {
+	public Employee setFavfood(FavFood favfood) {
 		this.favfood = favfood;
+		return this;
 	}
 }

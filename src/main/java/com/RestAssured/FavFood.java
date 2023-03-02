@@ -9,7 +9,9 @@ public final class FavFood {
 	 * Constructor
 	 * @param breakfast
 	 * @param lunch
+	 * @param dinner
 	 */
+	 
 	public FavFood(String breakfast, String lunch, List<String> dinner) {
 		this.breakfast=breakfast;
 		this.lunch=lunch;
