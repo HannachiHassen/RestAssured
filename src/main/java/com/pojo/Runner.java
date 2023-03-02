@@ -9,12 +9,9 @@ public final class Runner {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/*Employee employee= new Employee(14, "sdf", "hdfs", "fsfg@gmail.com","meat");
-		
-		//immutable objects --> Unchangable object
-		System.out.println(employee.getId());
-		
-		System.out.println(employee.getFirstnatme());
-		System.out.println(employee.getLastname());*/
+		Student student =new Student("adhdh", "gahe", "tester");
+		System.out.println(student.getFirstname());
+		System.out.println(student.getLastname());
+		System.out.println(student.getMajor());
 	}
 }
