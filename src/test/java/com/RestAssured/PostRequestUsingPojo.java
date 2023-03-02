@@ -29,7 +29,7 @@ public final class PostRequestUsingPojo {
 		*/
 		
 		FavFood favFood=new FavFood("chapathi", "rice",Arrays.asList("dosa", "milk"));
-		Employee employee=new Employee(345, "dsfgdg", "skjhdg", "sdgeg@gmail.com", favFood);
+		Employee employee=new Employee(345, "dsfgdg", "skjhdg", "sdgeg@gmail.com", favFood, Arrays.asList("tester","trainer"));
 		
 		Response response=given()
 				.header("Content-Type","application/json")
@@ -42,5 +42,4 @@ public final class PostRequestUsingPojo {
 		response.prettyPrint();
 		System.out.println(response.getStatusCode());
 	}
-
 }

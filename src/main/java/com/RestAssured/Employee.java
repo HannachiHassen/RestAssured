@@ -13,7 +13,7 @@ public final class Employee {
 	 * @param jobs
 	 * @param favfood
 	 */
-	public Employee(int id, String firstnatme, String lastname, String email, List<String> jobs, FavFood favfood) {
+	public Employee(int id, String firstnatme, String lastname, String email, FavFood favfood, List<String> jobs) {
 		this.id = id;
 		this.firstnatme = firstnatme;
 		this.lastname = lastname;
