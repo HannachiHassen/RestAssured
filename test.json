@@ -1,12 +1,28 @@
 {
-	"id":15,
-	"first_name":"fname",
-	"last_name":"lname",
-	"email":"abcd@gmail.com",	
-	"jobs":["tester","trainer"],
-	"favFoods":{
-		"breakfast":"idly",
-		"lunch":"rice",
-		"dinner":["chapathi","milk"]
+	"id": 15,
+	"first_name": "fname",
+	"last_name": "lname",
+	"email": "abcd@gmail.com",
+	"jobs": [
+		"tester",
+		"trainer"
+	],
+	"tests": [
+		{
+			"manual": 25,
+			"automation": 90
+		},
+		{
+			"postman": 25,
+			"soapui": 10
+		}
+	],
+	"favFoods": {
+		"breakfast": "idly",
+		"lunch": "rice",
+		"dinner": [
+			"chapathi",
+			"milk"
+		]
 	}
 }

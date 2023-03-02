@@ -1,4 +1,4 @@
-package com.RestAssured;
+package com.restassured;
 
 import static io.restassured.RestAssured.given;
 

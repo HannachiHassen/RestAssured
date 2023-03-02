@@ -1,25 +1,14 @@
-package com.RestAssured;
+package com.pojo;
 
 import java.util.List;
 
 public final class Employee {	
-
+	
 	/**
-	 * Constructor
-	 * @param id
-	 * @param firstnatme
-	 * @param lastname
-	 * @param email
-	 * @param jobs
-	 * @param favfood
-	 */
-	public Employee(int id, String firstnatme, String lastname, String email, FavFood favfood, List<String> jobs) {
-		this.id = id;
-		this.firstnatme = firstnatme;
-		this.lastname = lastname;
-		this.email = email;
-		this.jobs = jobs;
-		this.favfood = favfood;
+	* No args constructor for use in serialization
+	*
+	*/
+	public Employee() {
 	}
 
 	private int id;
@@ -28,7 +17,29 @@ public final class Employee {
 	private String email;
 	private List<String> jobs;
 	private FavFood favfood;
+	private List<Tests> tests;	
 	
+	/**
+	 * 	
+	 * @param id
+	 * @param firstnatme
+	 * @param lastname
+	 * @param email
+	 * @param jobs
+	 * @param favfood
+	 * @param tests
+	 */
+	public Employee(int id, String firstnatme, String lastname, String email, List<String> jobs, FavFood favfood, List<Tests> tests) {
+		super();
+		this.id = id;
+		this.firstnatme = firstnatme;
+		this.lastname = lastname;
+		this.email = email;
+		this.jobs = jobs;
+		this.favfood = favfood;
+		this.tests = tests;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -69,6 +80,15 @@ public final class Employee {
 	}
 	public Employee setFavfood(FavFood favfood) {
 		this.favfood = favfood;
+		return this;
+	}
+	
+	public List<Tests> getTests() {
+		return tests;
+	}
+
+	public Employee setTests(List<Tests> tests) {
+		this.tests = tests;
 		return this;
 	}
 }

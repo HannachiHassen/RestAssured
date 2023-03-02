@@ -1,12 +1,18 @@
-package com.RestAssured;
+package com.pojo;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public final class FavFood {
+	/**
+	* No args constructor for use in serialization
+	*
+	*/
+	public FavFood() {
+	}
 
 	/**
-	 * Constructor
+	 * 
 	 * @param breakfast
 	 * @param lunch
 	 * @param dinner

@@ -1,4 +1,4 @@
-package com.RestAssured;
+package com.pojo;
 
 public final class Runner {
 
