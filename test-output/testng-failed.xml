@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.RestAssured.PostRequest">
+      <class name="com.RestAssured.GetRequest">
         <methods>
-          <include name="postTest6"/>
+          <include name="getTest"/>
         </methods>
-      </class> <!-- com.RestAssured.PostRequest -->
+      </class> <!-- com.RestAssured.GetRequest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

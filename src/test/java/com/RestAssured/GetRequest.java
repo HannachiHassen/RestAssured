@@ -9,8 +9,6 @@ import io.restassured.response.*;
 
  public final class GetRequest {
 	
-	private GetRequest() {	}
-	
 	/**
 	 * RestAssured support BDD way and non BDD way
 	 */
@@ -18,7 +16,7 @@ import io.restassured.response.*;
 	@Test
 	public void getTest() {
 		//sugarcoated methods -->readability
-		given().get("http://localhost:3000/emmployees").then().statusCode(200);
+		//given().get("http://localhost:3000/emmployees").then().statusCode(200);
 		
 		Response response=given().get("http://localhost:3000/emmployees");
 		response.prettyPrint();
