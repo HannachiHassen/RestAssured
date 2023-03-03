@@ -2,6 +2,7 @@ package com.pojo;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -18,7 +19,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @JsonInclude (value=JsonInclude.Include.NON_EMPTY)
-@JsonPropertyOrder(alphabetic = true)
+//@JsonPropertyOrder(alphabetic = true)
+@JsonPropertyOrder(value={"firstname", "jobs"})
 public final class Employees {
 
 	/**
@@ -32,6 +34,8 @@ public final class Employees {
 	private int id;
 	private String firstnatme;
 	private String lastname;
+	
+	@JsonIgnore
 	private String email;
 	private List<String> jobs;
 	private FavFood favfood;
