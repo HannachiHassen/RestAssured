@@ -3,6 +3,7 @@ package com.pojo;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -21,6 +22,7 @@ import lombok.Setter;
 @JsonInclude (value=JsonInclude.Include.NON_EMPTY)
 //@JsonPropertyOrder(alphabetic = true)
 @JsonPropertyOrder(value={"firstname", "jobs"})
+@JsonIgnoreProperties(value= {"firstname"})
 public final class Employees {
 
 	/**
