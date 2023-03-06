@@ -2,15 +2,15 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-06T15:57:28 EST" name="Default suite" finished-at="2023-03-06T15:57:28 EST" duration-ms="82">
+  <suite started-at="2023-03-06T16:04:15 EST" name="Default suite" finished-at="2023-03-06T16:04:15 EST" duration-ms="95">
     <groups>
     </groups>
-    <test started-at="2023-03-06T15:57:28 EST" name="Default test" finished-at="2023-03-06T15:57:28 EST" duration-ms="82">
+    <test started-at="2023-03-06T16:04:15 EST" name="Default test" finished-at="2023-03-06T16:04:15 EST" duration-ms="95">
       <class name="com.restassured.BuilderDesingPatternTest">
-        <test-method signature="builderTest3()[pri:0, instance:com.restassured.BuilderDesingPatternTest@43301423]" started-at="2023-03-06T15:57:28 EST" name="builderTest3" finished-at="2023-03-06T15:57:28 EST" duration-ms="17" status="PASS">
+        <test-method signature="builderLombokTest()[pri:0, instance:com.restassured.BuilderDesingPatternTest@43301423]" started-at="2023-03-06T16:04:15 EST" name="builderLombokTest" finished-at="2023-03-06T16:04:15 EST" duration-ms="26" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- builderTest3 -->
+        </test-method> <!-- builderLombokTest -->
       </class> <!-- com.restassured.BuilderDesingPatternTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

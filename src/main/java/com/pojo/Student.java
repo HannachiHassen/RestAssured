@@ -12,7 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @JsonInclude (value=JsonInclude.Include.NON_EMPTY, content=Include.NON_NULL)
-@Builder
+@Builder (buildMethodName = "getStudent")
 public final class Student {
 	private int id;
 	private String firstnatme;
