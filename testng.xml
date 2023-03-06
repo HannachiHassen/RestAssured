@@ -3,9 +3,11 @@
 <suite name="Suite">
   <test thread-count="1" name="Test" parallel="methods">
     <classes>
-      <class name="com.RestAssured.GetRequest"/>
+      <class name="com.RestAssured.GetRequest"/>      
       <class name="com.RestAssured.PostRequest"/>
+      <class name="com.RestAssured.UpdateRequest"/>
       <class name="com.RestAssured.PostRequestUsingPojo"/>
+      <class name="com.RestAssured.BuilderDesingPatternTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
