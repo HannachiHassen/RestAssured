@@ -37,10 +37,12 @@ public final class Employees {
 	private String firstnatme;
 	private String lastname;
 	
-	@JsonIgnore
+	/**
+	 * Use @JsonIgnore to ignore 
+	 */
 	private String email;
 	private List<String> jobs;
 	private FavFood favfood;
-	private List<Tests> tests;	
+	private List<Marks> marks;	
 
 }

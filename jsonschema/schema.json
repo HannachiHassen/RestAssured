@@ -1,0 +1,103 @@
+
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "firstnatme": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "jobs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "favfood": {
+      "type": "object",
+      "properties": {
+        "breakfast": {
+          "type": "string"
+        },
+        "lunch": {
+          "type": "string"
+        },
+        "dinner": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ]
+    },
+    "tests": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "manual": {
+              "type": "integer"
+            },
+            "automation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "manual",
+            "automation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "manual": {
+              "type": "integer"
+            },
+            "automation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "manual",
+            "automation"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "firstnatme",
+    "lastname",
+    "email",
+    "jobs",
+    "favfood",
+    "tests"
+  ]
+}
+

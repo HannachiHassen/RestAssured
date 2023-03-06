@@ -1,12 +1,12 @@
 package com.pojo;
 
-public final class Tests {
+public final class Marks {
 
 	/**
 	* No args constructor for use in serialization
 	*
 	*/
-	public Tests() {
+	public Marks() {
 		
 	}
 	
@@ -18,7 +18,7 @@ public final class Tests {
 	 * @param manual
 	 * @param automation
 	 */
-	public Tests(int manual, int automation) {
+	public Marks(int manual, int automation) {
 		this.manual = manual;
 		this.automation = automation;
 	}
@@ -27,7 +27,7 @@ public final class Tests {
 		return manual;
 	}
 
-	public Tests setManual(int manual) {
+	public Marks setManual(int manual) {
 		this.manual = manual;
 		return this;
 	}
@@ -36,7 +36,7 @@ public final class Tests {
 		return automation;
 	}
 
-	public Tests setAutomation(int automation) {
+	public Marks setAutomation(int automation) {
 		this.automation = automation;
 		return this;
 	}	

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.RestAssured.GetRequest">
+      <class name="com.restassured.PostRequestUsingPojo">
         <methods>
-          <include name="getTest"/>
+          <include name="pojoTest"/>
         </methods>
-      </class> <!-- com.RestAssured.GetRequest -->
+      </class> <!-- com.restassured.PostRequestUsingPojo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

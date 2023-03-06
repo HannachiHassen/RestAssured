@@ -22,7 +22,7 @@ public final class Employee {
 	private String email;
 	private List<String> jobs;
 	private FavFood favfood;
-	private List<Tests> tests;	
+	private List<Marks> marks;	
 	
 	/**
 	 * 	
@@ -34,7 +34,7 @@ public final class Employee {
 	 * @param favfood
 	 * @param tests
 	 */
-	public Employee(int id, String firstnatme, String lastname, String email, List<String> jobs, FavFood favfood, List<Tests> tests) {
+	public Employee(int id, String firstnatme, String lastname, String email, List<String> jobs, FavFood favfood, List<Marks> marks) {
 		super();
 		this.id = id;
 		this.firstnatme = firstnatme;
@@ -42,7 +42,7 @@ public final class Employee {
 		this.email = email;
 		this.jobs = jobs;
 		this.favfood = favfood;
-		this.tests = tests;
+		this.marks = marks;
 	}
 
 	public int getId() {
@@ -88,12 +88,12 @@ public final class Employee {
 		return this;
 	}
 	
-	public List<Tests> getTests() {
-		return tests;
+	public List<Marks> getMarks() {
+		return marks;
 	}
 
-	public Employee setTests(List<Tests> tests) {
-		this.tests = tests;
+	public Employee setMarks(List<Marks> marks) {
+		this.marks = marks;
 		return this;
 	}
 }
