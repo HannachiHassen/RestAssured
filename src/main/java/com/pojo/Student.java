@@ -12,6 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @JsonInclude (value=JsonInclude.Include.NON_EMPTY, content=Include.NON_NULL)
+@Builder
 public final class Student {
 	private int id;
 	private String firstnatme;
@@ -25,13 +26,16 @@ public final class Student {
 	 * @author HASSEN
 	 *
 	 */
+
 	public static class StudentBuilder1 {
 		private int id;
 		private String firstnatme;
 		private String lastname;
 		private String email;
 				
-		public static StudentBuilder1 builder() {
+		
+		 public static StudentBuilder1 builder() {
+		 
 			return new StudentBuilder1();
 		}		
 
