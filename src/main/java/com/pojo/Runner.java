@@ -17,7 +17,7 @@ public final class Runner {
 		Marks tests1= new Marks(85,90);
 		Marks tests = new Marks(95,68);
 		List<Marks> listofTests=Arrays.asList(tests1,tests);
-		Employee employee=new Employee(345, "dsfgdg", "skjhdg", "sdgeg@gmail.com", Arrays.asList("tester","trainer"), favFood, listofTests);
+		Employees employee=new Employees(345, "dsfgdg", "skjhdg", "sdgeg@gmail.com", Arrays.asList("tester","trainer"), favFood, listofTests);
 		System.out.println(employee.getId());
 		System.out.println(employee.getFirstnatme());
 		System.out.println(employee.getLastname());
